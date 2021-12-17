@@ -1,4 +1,4 @@
-package life.qbic.business.subscription
+package life.qbic.business.subscription.exceptions
 
 /**
  * <class short description - 1 Line!>

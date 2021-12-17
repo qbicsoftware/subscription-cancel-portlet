@@ -1,4 +1,6 @@
-package life.qbic.business.subscription
+package life.qbic.business.subscription.api
+
+import life.qbic.business.subscription.CancellationConfirmation
 
 /**
  * <b>Interface CancelSubscriptionOutput</b>
@@ -13,7 +15,7 @@ interface CancelSubscriptionOutput {
      * Is executed after successful use case execution
      * @param request the subscription that has been cancelled
      */
-    void onSuccess(CancellationRequest request)
+    void onSuccess(CancellationConfirmation request)
 
     /**
      * Is executed in the case of failing use case execution

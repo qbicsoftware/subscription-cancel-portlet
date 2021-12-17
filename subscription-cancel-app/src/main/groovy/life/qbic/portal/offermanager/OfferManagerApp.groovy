@@ -1,13 +1,12 @@
 package life.qbic.portal.offermanager
 
 import com.vaadin.annotations.Theme
-import com.vaadin.server.Page
 import com.vaadin.server.VaadinRequest
 import com.vaadin.ui.Layout
-import com.vaadin.ui.Notification
 import com.vaadin.ui.VerticalLayout
 import groovy.transform.CompileStatic
 import groovy.util.logging.Log4j2
+import org.eclipse.aether.collection.DependencyManager
 
 /**
  * Entry point for the application. This class derives from {@link life.qbic.portal.portlet.QBiCPortletUI}.
