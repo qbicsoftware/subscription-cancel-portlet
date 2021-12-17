@@ -1,12 +1,12 @@
-package life.qbic.portal.offermanager
+package life.qbic.portal.subscription
 
 import com.vaadin.annotations.Theme
 import com.vaadin.server.VaadinRequest
 import com.vaadin.ui.Layout
-import com.vaadin.ui.VerticalLayout
 import groovy.transform.CompileStatic
 import groovy.util.logging.Log4j2
-import org.eclipse.aether.collection.DependencyManager
+import life.qbic.portal.subscription.view.SubscriptionInterface
+import life.qbic.portal.subscription.view.model.SubscriptionModel
 
 /**
  * Entry point for the application. This class derives from {@link life.qbic.portal.portlet.QBiCPortletUI}.
@@ -19,17 +19,17 @@ import org.eclipse.aether.collection.DependencyManager
 @SuppressWarnings("serial")
 @Log4j2
 @CompileStatic
-class OfferManagerApp extends QBiCPortletUI {
+class SubscriptionCancelApp extends QBiCPortletUI {
 
     private DependencyManager dependencyManager
 
-    OfferManagerApp() {
+    SubscriptionCancelApp() {
         super()
         // The constructor MUST NOT fail since the user does not get any feedback otherwise.
         try {
             create()
         } catch (Exception e) {
-            log.error("Could not initialize {}", OfferManagerApp.getCanonicalName(), e)
+            log.error("Could not initialize {}", SubscriptionCancelApp.getCanonicalName(), e)
         } catch (Error error) {
             log.error("Unexpected runtime error.", error)
         }
@@ -41,8 +41,8 @@ class OfferManagerApp extends QBiCPortletUI {
 
     @Override
     protected Layout getPortletContent(final VaadinRequest request) {
-        def layout = new VerticalLayout()
-
+        def layout = new SubscriptionInterface(new SubscriptionModel())
+        dependencyManager.getCancelSubscriptionInput().cancelSubscription(request.getParameter("token"))
         return layout
     }
 

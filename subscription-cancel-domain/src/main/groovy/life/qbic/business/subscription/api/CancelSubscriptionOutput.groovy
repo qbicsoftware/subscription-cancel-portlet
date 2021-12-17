@@ -5,7 +5,7 @@ import life.qbic.business.subscription.CancellationConfirmation
 /**
  * <b>Interface CancelSubscriptionOutput</b>
  *
- * <p>Callback actions for the {@link CancelSubscription} use case.</p>
+ * <p>Callback actions for the {@link life.qbic.business.subscription.CancelSubscription} use case.</p>
  *
  * @since 1.0.0
  */
