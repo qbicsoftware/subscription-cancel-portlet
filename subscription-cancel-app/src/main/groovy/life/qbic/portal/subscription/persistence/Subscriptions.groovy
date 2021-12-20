@@ -48,7 +48,6 @@ class Subscriptions implements SubscriptionService {
         CloseableHttpClient httpClient = HttpClients.createDefault()
         HttpPost httpPost = new HttpPost(serviceEndPoint + "/" + requestToken)
         httpPost.setHeader("Accept", "application/json")
-        httpPost.setHeader("", )
         String response = httpClient.execute(httpPost, responseHandler)
         return parseConfirmation(response)
     }

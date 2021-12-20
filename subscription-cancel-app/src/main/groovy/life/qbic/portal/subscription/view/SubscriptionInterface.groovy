@@ -32,6 +32,7 @@ class SubscriptionInterface extends VerticalLayout {
         this.model = model
         init()
         bindToModel()
+        setListeners()
     }
 
     void bindToModel() {
@@ -39,6 +40,20 @@ class SubscriptionInterface extends VerticalLayout {
         email.setValue(model.email)
         confirmation.setVisible(model.showConfirmation)
         failureNotification.setVisible(model.showFailure)
+    }
+
+    void setListeners() {
+        model.addPropertyChangeListener("project", {
+            project.setValue(it.newValue as String)
+        })
+        model.addPropertyChangeListener("email", {
+            email.setValue(it.newValue as String)
+        })
+        model.addPropertyChangeListener("showConfirmation", {
+            failureNotification.setVisible(!it.newValue as Boolean)
+            confirmation.setVisible(it.newValue as Boolean)
+        })
+
     }
 
     void init() {

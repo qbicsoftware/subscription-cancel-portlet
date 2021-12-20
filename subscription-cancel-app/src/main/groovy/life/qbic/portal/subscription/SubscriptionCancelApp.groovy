@@ -5,7 +5,9 @@ import com.vaadin.server.VaadinRequest
 import com.vaadin.ui.Layout
 import groovy.transform.CompileStatic
 import groovy.util.logging.Log4j2
+import life.qbic.business.subscription.api.CancelSubscriptionOutput
 import life.qbic.portal.subscription.view.SubscriptionInterface
+import life.qbic.portal.subscription.view.SubscriptionPresenter
 import life.qbic.portal.subscription.view.model.SubscriptionModel
 
 /**
@@ -41,9 +43,8 @@ class SubscriptionCancelApp extends QBiCPortletUI {
 
     @Override
     protected Layout getPortletContent(final VaadinRequest request) {
-        def layout = new SubscriptionInterface(new SubscriptionModel())
         dependencyManager.getCancelSubscriptionInput().cancelSubscription(request.getParameter("token"))
-        return layout
+        return dependencyManager.getLayout()
     }
 
 }

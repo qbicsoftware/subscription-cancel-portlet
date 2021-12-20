@@ -4,6 +4,7 @@ import groovy.util.logging.Log4j2
 import life.qbic.business.subscription.api.CancelSubscriptionInput
 import life.qbic.business.subscription.api.CancelSubscriptionOutput
 import life.qbic.business.subscription.api.SubscriptionService
+import life.qbic.business.subscription.exceptions.SubscriptionServiceException
 
 /**
  * Subscription cancellation use case
@@ -26,7 +27,7 @@ class CancelSubscription implements CancelSubscriptionInput {
         try {
             CancellationConfirmation confirmation = subscriptionService.cancelRequest(requestToken)
             output.onSuccess(confirmation)
-        } catch (SecurityException e) {
+        } catch (SubscriptionServiceException e) {
             log.error(e.getMessage())
             output.onFailure("Could not cancel the subscription.")
         } catch (Exception e) {

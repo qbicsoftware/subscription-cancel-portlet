@@ -1,29 +1,31 @@
 package life.qbic.portal.subscription.view.model
 
+import groovy.beans.Bindable
+import groovy.transform.ToString
+
+@ToString
 /**
- * <class short description - 1 Line!>
+ * Subscription view model.
  *
- * <More detailed description - When to use, what it solves, etc.>
- *
- * @since <version tag>
+ * @since 1.0.0
  */
 class SubscriptionModel {
 
-    String project
+    @Bindable String project
 
-    String email
+    @Bindable String email
 
-    boolean showConfirmation
+    @Bindable boolean showConfirmation
 
-    boolean showFailure
+    @Bindable boolean showFailure
 
     SubscriptionModel() {
         init()
     }
 
     void init() {
-        project = "QABCE"
-        email = "sven.fillinger@mailbox.org"
+        project = ""
+        email = ""
         showConfirmation = false
         showFailure = true
     }
