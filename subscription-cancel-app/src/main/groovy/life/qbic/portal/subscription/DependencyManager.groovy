@@ -6,6 +6,7 @@ import life.qbic.business.subscription.api.CancelSubscriptionInput
 import life.qbic.business.subscription.api.CancelSubscriptionOutput
 import life.qbic.business.subscription.api.SubscriptionService
 import life.qbic.business.subscription.exceptions.SubscriptionServiceException
+import life.qbic.portal.subscription.persistence.Subscriptions
 import life.qbic.portal.utils.ConfigurationManager
 import life.qbic.portal.utils.ConfigurationManagerFactory
 
@@ -27,15 +28,7 @@ class DependencyManager {
             void onFailure(String reason) {
                 println "Failed: $reason"
             }
-        }, new SubscriptionService() {
-            @Override
-            CancellationConfirmation cancelRequest(String requestToken) throws SubscriptionServiceException {
-                if (!requestToken) {
-                    throw new SubscriptionServiceException("Damn, where is your token?")
-                }
-                return new CancellationConfirmation(project: "QTEST", "userId": "sven.fillinger@qbic.uni-tuebingen.de")
-            }
-        })
+        }, new Subscriptions(configurationManager.getServicesSubscriptionUrl()))
     }
 
     CancelSubscriptionInput getCancelSubscriptionInput() {

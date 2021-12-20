@@ -97,7 +97,7 @@ class SubscriptionInterface extends VerticalLayout {
         Label label = new Label("You did not cancel you subscription.")
         label.setStyleName(ValoTheme.LABEL_SMALL)
         label.setSizeUndefined()
-        Label label2 = new Label("Write an email to <a href='mailto:support@qbic.zendesk.com'>support@qbic.zendesk.com</a> for help.", ContentMode.HTML)
+        Label label2 = new Label("Please write an email to <a href='mailto:support@qbic.zendesk.com'>support@qbic.zendesk.com</a> for help.", ContentMode.HTML)
         label.setStyleName(ValoTheme.LABEL_SMALL)
         label.setSizeUndefined()
         failureNotification.addComponent(failure)
