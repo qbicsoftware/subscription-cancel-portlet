@@ -20,7 +20,7 @@ class FailureDisplay extends VerticalLayout {
     }
 
     private void buildDisplay() {
-        Label failureIcon = new Label(VaadinIcons.CLOSE.getHtml(), ContentMode.HTML)
+        Label failureIcon = new Label(VaadinIcons.CHECK_CIRCLE_O.getHtml(), ContentMode.HTML)
         failureIcon.addStyleName(ValoTheme.LABEL_H1)
         failureIcon.addStyleName("failure-red")
 
