@@ -1,4 +1,4 @@
-package life.qbic.portal.offermanager;
+package life.qbic.portal.subscription;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.server.VaadinRequest;
