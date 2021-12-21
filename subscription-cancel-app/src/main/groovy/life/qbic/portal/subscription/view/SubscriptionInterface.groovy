@@ -57,7 +57,7 @@ class SubscriptionInterface extends VerticalLayout {
             confirmationDisplay.setVisible(it.newValue as Boolean)
         })
         model.addPropertyChangeListener("showFailure", {
-            failureDisplay.setVisible(!it.newValue as Boolean)
+            failureDisplay.setVisible(it.newValue as Boolean)
         })
 
     }
