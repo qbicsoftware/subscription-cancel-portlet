@@ -44,7 +44,6 @@ class Subscriptions implements SubscriptionService {
     Subscriptions(String serviceUrlBase) {
         this.serviceUrlBase = Objects.requireNonNull(serviceUrlBase)
         this.serviceEndPoint = serviceUrlBase + CANCEL_ENDPOINT
-        log.info(serviceEndPoint)
     }
 
     @Override
