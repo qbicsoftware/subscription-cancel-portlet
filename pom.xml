@@ -8,7 +8,7 @@
     <module>subscription-cancel-app</module>
   </modules>
   <artifactId>subscription-cancel-portlet</artifactId>
-  <version>1.0.0</version> <!-- <<QUBE_FORCE_BUMP>> -->
+  <version>1.0.0-rc.1</version> <!-- <<QUBE_FORCE_BUMP>> -->
   <groupId>life.qbic</groupId>
   <name>Subscription cancel app</name>
   <url>http://github.com/qbicsoftware/qOffer_2.0</url>
