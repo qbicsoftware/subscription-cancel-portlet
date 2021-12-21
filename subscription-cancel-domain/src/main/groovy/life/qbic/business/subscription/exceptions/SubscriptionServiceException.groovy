@@ -1,11 +1,9 @@
 package life.qbic.business.subscription.exceptions
 
 /**
- * <class short description - 1 Line!>
- *
- * <More detailed description - When to use, what it solves, etc.>
- *
- * @since <version tag>
+ * Exception to be thrown, when an exception occurs during the subscription service
+ * task execution.
+ * @since 1.0.0
  */
 class SubscriptionServiceException extends RuntimeException {
 

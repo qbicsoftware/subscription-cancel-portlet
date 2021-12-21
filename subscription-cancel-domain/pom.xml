@@ -7,7 +7,7 @@
   <parent>
     <artifactId>subscription-cancel-portlet</artifactId>
     <groupId>life.qbic</groupId>
-    <version>1.0.0</version>
+    <version>1.0.0-rc.1</version>
   </parent>
   <dependencies>
     <dependency>

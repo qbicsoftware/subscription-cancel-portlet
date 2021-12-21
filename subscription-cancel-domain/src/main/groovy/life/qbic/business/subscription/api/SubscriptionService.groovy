@@ -4,11 +4,13 @@ import life.qbic.business.subscription.CancellationConfirmation
 import life.qbic.business.subscription.exceptions.SubscriptionServiceException
 
 /**
- * <interface short description - 1 Line!>
+ * <b>Interface SubscriptionService</b>
  *
- * <More detailed description - When to use, what it solves, etc.>
+ * <p>Provides access to an subscription service implementation. A subscription service
+ * needs to accept a valid request token and confirm the cancellation by
+ * providing a {@link CancellationConfirmation}.</p>
  *
- * @since <version tag>
+ * @since 1.0.0
  */
 interface SubscriptionService {
 
