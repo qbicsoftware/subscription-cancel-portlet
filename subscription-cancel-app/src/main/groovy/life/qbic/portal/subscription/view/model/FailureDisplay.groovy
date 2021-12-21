@@ -28,10 +28,10 @@ class FailureDisplay extends VerticalLayout {
         topic.addStyleName(ValoTheme.LABEL_H1)
         topic.addStyleName("failure-red")
 
-        Label failureNote = new Label("You did not cancel you subscription.")
+        Label failureNote = new Label("Your subscription was not cancelled.")
         failureNote.setStyleName(ValoTheme.LABEL_SMALL)
 
-        Label actionNote = new Label("Please write an email to <a href='mailto:support@qbic.zendesk.com'>support@qbic.zendesk.com</a> for help.", ContentMode.HTML)
+        Label actionNote = new Label("Please contact <a href='mailto:support@qbic.zendesk.com'>support@qbic.zendesk.com</a> for help.", ContentMode.HTML)
         actionNote.setStyleName(ValoTheme.LABEL_SMALL)
 
         List<Component> components = [failureIcon, topic, failureNote, actionNote]
