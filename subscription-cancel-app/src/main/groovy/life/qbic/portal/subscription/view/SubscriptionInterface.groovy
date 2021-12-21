@@ -1,12 +1,7 @@
 package life.qbic.portal.subscription.view
 
-import com.vaadin.icons.VaadinIcons
-import com.vaadin.shared.ui.ContentMode
-import com.vaadin.ui.Alignment
-import com.vaadin.ui.Label
-import com.vaadin.ui.Layout
+
 import com.vaadin.ui.VerticalLayout
-import com.vaadin.ui.themes.ValoTheme
 import life.qbic.portal.subscription.view.model.ConfirmationDisplay
 import life.qbic.portal.subscription.view.model.FailureDisplay
 import life.qbic.portal.subscription.view.model.SubscriptionModel
