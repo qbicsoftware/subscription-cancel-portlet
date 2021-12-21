@@ -38,11 +38,11 @@ class ConfirmationDisplay extends VerticalLayout {
         affirmative.addStyleName(ValoTheme.LABEL_H1)
         affirmative.addStyleName(ValoTheme.LABEL_COLORED)
 
-        Label topic = new Label("Subscription cancelled.")
+        Label topic = new Label("Subscription cancelled!")
         topic.addStyleName(ValoTheme.LABEL_H1)
         topic.addStyleName(ValoTheme.LABEL_COLORED)
 
-        Label info = new Label("We stop sending updates for")
+        Label info = new Label("You will not receive further updates for")
         info.setStyleName(ValoTheme.LABEL_SMALL)
 
         project = new Label("PROJECT PLACEHOLDER")
