@@ -14,6 +14,13 @@ import org.apache.http.impl.client.HttpClients
 import org.apache.http.util.EntityUtils
 
 @Log4j2
+/**
+ * <b>Class Subscriptions</b>
+ *
+ * <p>Implementation of the {@link SubscriptionService} interface. Calls the QBiC REST
+ * service that handles the subscriptions.</p>
+ * @since 1.0.0
+ */
 class Subscriptions implements SubscriptionService {
 
     public static final String CANCEL_ENDPOINT = "/subscription/cancel"
