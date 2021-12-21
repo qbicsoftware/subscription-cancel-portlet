@@ -80,6 +80,7 @@ public abstract class QBiCPortletUI extends UI {
 
     addPortletInfo(layout);
     setContent(layout);
+    getSession().close();
   }
 
   @Override
