@@ -1,6 +1,5 @@
 package life.qbic.portal.subscription.view;
 
-import life.qbic.business.subscription.CancellationConfirmation;
 import life.qbic.business.subscription.api.CancelSubscriptionOutput;
 import life.qbic.portal.subscription.view.model.SubscriptionModel;
 import org.slf4j.Logger;

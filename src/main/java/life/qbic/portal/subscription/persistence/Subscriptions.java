@@ -2,7 +2,6 @@ package life.qbic.portal.subscription.persistence;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Objects;
-import life.qbic.business.subscription.CancellationConfirmation;
 import life.qbic.business.subscription.api.SubscriptionService;
 import life.qbic.business.subscription.exceptions.SubscriptionServiceException;
 import org.apache.http.HttpEntity;

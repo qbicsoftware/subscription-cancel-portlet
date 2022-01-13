@@ -1,6 +1,5 @@
 package life.qbic.business.subscription.api;
 
-import life.qbic.business.subscription.CancellationConfirmation;
 
 /**
  * <b>Interface CancelSubscriptionOutput</b>
