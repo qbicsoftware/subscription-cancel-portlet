@@ -23,12 +23,12 @@ import org.springframework.stereotype.Component;
 @PageTitle("Subscription Cancellation")
 @Route(value = "cancel")
 @RouteAlias(value = "")
-@Component
 public class AppMainView extends HorizontalLayout implements HasUrlParameter<String> {
 
   private final CancelSubscriptionInput cancelSubscriptionInput;
   private static final Logger logger = LoggerFactory.getLogger(AppMainView.class);
 
+  //do not add the component annotation to the class as suggested, it causes the app to fail when loading multiple requests
   @Autowired
   public AppMainView(
       SubscriptionService subscriptionService,
