@@ -1,17 +1,12 @@
 package life.qbic.portal.subscription.persistence;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Objects;
 import life.qbic.business.subscription.api.SubscriptionService;
 import life.qbic.business.subscription.exceptions.SubscriptionServiceException;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpStatus;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +27,11 @@ class Subscriptions implements SubscriptionService {
   public static final String CANCEL_ENDPOINT = "/subscriptions";
   private final String serviceEndPoint;
   Logger logger = LoggerFactory.getLogger(this.getClass());
-  final ResponseHandler<String> responseHandler =
+  final ResponseHandler<Boolean> responseHandler =
       response -> {
         int status = response.getStatusLine().getStatusCode();
-        if (status >= 200 && status < 300) {
-          return status+"";
+        if (status < 200 || status > 300) {
+          return true;
         } else {
           logger.error("Subscription cancelling failed.");
           logger.error(String.valueOf(response.getStatusLine()));
@@ -59,8 +54,7 @@ class Subscriptions implements SubscriptionService {
     CloseableHttpClient httpClient = HttpClients.createDefault();
     HttpDelete httpDelete = new HttpDelete(serviceEndPoint + "/" + requestToken);
     try {
-      String response = httpClient.execute(httpDelete, responseHandler);
-      logger.info(response);
+      httpClient.execute(httpDelete, responseHandler);
     } catch (Exception e) {
       logger.error(e.getMessage());
       throw new SubscriptionServiceException(
