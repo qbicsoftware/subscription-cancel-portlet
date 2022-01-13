@@ -17,15 +17,6 @@ import java.util.Arrays;
  */
 public class ConfirmationDisplay extends VerticalLayout {
 
-  /**
-   * The project identifier we are going to display upon confirmation of the subscription
-   * cancellation
-   */
-  private H3 project;
-
-  /** The email for which the cancellation has been confirmed */
-  private H3 email;
-
   public ConfirmationDisplay() {
     buildDisplay();
   }
@@ -39,30 +30,16 @@ public class ConfirmationDisplay extends VerticalLayout {
     // The top level topic header
     var topic = new H1("Subscription cancelled!");
     // A confirmation note
-    var confirmation = new Paragraph("You will not receive further updates for");
-    // An action note for the user
-    var toLabel = new Paragraph("to");
-
-    project = new H3("PROJECT PLACEHOLDER");
-
-    email = new H3("EMAIL PLACEHOLDER");
+    var confirmation = new Paragraph("You will not receive further updates!");
 
     var components =
         new ArrayList<Component>(
-            Arrays.asList(successIcon, topic, confirmation, project, toLabel, email));
+            Arrays.asList(successIcon, topic, confirmation));
     // We align all components in center
     components.forEach(
         c -> {
           this.add(c);
           this.setHorizontalComponentAlignment(Alignment.CENTER, c);
         });
-  }
-
-  public void setProject(String project) {
-    this.project.getElement().setText(project);
-  }
-
-  public void setEmail(String email) {
-    this.email.getElement().setText(email);
   }
 }

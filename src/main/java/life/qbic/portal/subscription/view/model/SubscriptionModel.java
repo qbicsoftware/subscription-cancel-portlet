@@ -18,8 +18,6 @@ public class SubscriptionModel {
 
   private final PropertyChangeSupport propertyChangeSupport;
   Logger logger = LoggerFactory.getLogger(this.getClass());
-  private String project;
-  private String email;
   private boolean showConfirmation;
   private boolean showFailure;
 
@@ -29,8 +27,6 @@ public class SubscriptionModel {
   }
 
   void init() {
-    project = "";
-    email = "";
     showConfirmation = false;
     showFailure = true;
   }
@@ -39,23 +35,6 @@ public class SubscriptionModel {
     propertyChangeSupport.addPropertyChangeListener(listener);
   }
 
-  public String getProject() {
-    return project;
-  }
-
-  public void setProject(String project) {
-    propertyChangeSupport.firePropertyChange("project", this.project, project);
-    this.project = project;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    propertyChangeSupport.firePropertyChange("email", this.email, email);
-    this.email = email;
-  }
 
   public boolean isShowConfirmation() {
     return showConfirmation;

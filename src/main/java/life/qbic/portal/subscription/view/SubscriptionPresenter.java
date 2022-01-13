@@ -27,13 +27,9 @@ public class SubscriptionPresenter implements CancelSubscriptionOutput {
   }
 
   @Override
-  public void onSuccess(CancellationConfirmation request) {
+  public void onSuccess() {
     this.model.setShowConfirmation(true);
     this.model.setShowFailure(false);
-    this.model.setProject(request.getProject());
-    this.model.setEmail(request.getUserId());
-    model.reset();
-    logger.info("Successful cancellation request for: " + request);
   }
 
   @Override
@@ -42,6 +38,5 @@ public class SubscriptionPresenter implements CancelSubscriptionOutput {
     logger.error(reason);
     this.model.setShowConfirmation(false);
     this.model.setShowFailure(true);
-    model.reset();
   }
 }

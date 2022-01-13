@@ -14,9 +14,8 @@ public interface CancelSubscriptionOutput {
   /**
    * Is executed after successful use case execution
    *
-   * @param request the subscription that has been cancelled
    */
-  void onSuccess(CancellationConfirmation request);
+  void onSuccess();
 
   /**
    * Is executed in the case of failing use case execution

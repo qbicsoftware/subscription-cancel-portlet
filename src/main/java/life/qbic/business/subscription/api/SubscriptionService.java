@@ -21,5 +21,5 @@ public interface SubscriptionService {
    * @return
    * @throws SubscriptionServiceException
    */
-  CancellationConfirmation cancelRequest(String requestToken) throws SubscriptionServiceException;
+  void cancelRequest(String requestToken) throws SubscriptionServiceException;
 }

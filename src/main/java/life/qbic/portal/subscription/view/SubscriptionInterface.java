@@ -43,8 +43,6 @@ public class SubscriptionInterface extends VerticalLayout {
     this.model.addPropertyChangeListener(
         evt -> {
           switch (evt.getPropertyName()) {
-            case "project" -> confirmationDisplay.setProject((String) evt.getNewValue());
-            case "email" -> confirmationDisplay.setEmail((String) evt.getNewValue());
             case "showConfirmation" -> confirmationDisplay.setVisible(
                 (Boolean) evt.getNewValue());
             case "showFailure" -> failureDisplay.setVisible((Boolean) evt.getNewValue());
