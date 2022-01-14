@@ -18,6 +18,7 @@ import life.qbic.portal.subscription.view.model.SubscriptionModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @PageTitle("Subscription Cancellation")
 @Route(value = "cancel")
@@ -25,8 +26,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class AppMainView extends HorizontalLayout implements HasUrlParameter<String> {
 
   private final CancelSubscriptionInput cancelSubscriptionInput;
-  Logger logger = LoggerFactory.getLogger(this.getClass());
+  private static final Logger logger = LoggerFactory.getLogger(AppMainView.class);
 
+  //do not add the component annotation to the class as suggested, it causes the app to fail when loading multiple requests
   @Autowired
   public AppMainView(
       SubscriptionService subscriptionService,

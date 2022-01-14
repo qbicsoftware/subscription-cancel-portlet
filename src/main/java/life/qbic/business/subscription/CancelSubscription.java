@@ -27,8 +27,8 @@ public class CancelSubscription implements CancelSubscriptionInput {
   @Override
   public void cancelSubscription(String requestToken) {
     try {
-      CancellationConfirmation confirmation = subscriptionService.cancelRequest(requestToken);
-      output.onSuccess(confirmation);
+      subscriptionService.cancelRequest(requestToken);
+      output.onSuccess();
     } catch (SubscriptionServiceException e) {
       logger.error(e.getMessage());
       output.onFailure("Could not cancel the subscription.");
