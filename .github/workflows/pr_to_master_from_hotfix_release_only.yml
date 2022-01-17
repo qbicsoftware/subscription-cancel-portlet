@@ -3,7 +3,7 @@ name: PR to master branch from patch/release branch only
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   test:
