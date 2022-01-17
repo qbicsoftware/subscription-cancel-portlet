@@ -6,7 +6,7 @@
     <groupId>life.qbic.portal</groupId>
     <artifactId>subscriptioncancel</artifactId>
     <name>Project base for Spring Boot and Vaadin Flow</name>
-    <version>1.0.0-rc.1-SNAPSHOT</version>
+    <version>1.0.0-rc.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
