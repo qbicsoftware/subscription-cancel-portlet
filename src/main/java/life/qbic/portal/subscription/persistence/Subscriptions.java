@@ -30,7 +30,7 @@ class Subscriptions implements SubscriptionService {
   final ResponseHandler<Boolean> responseHandler =
       response -> {
         int status = response.getStatusLine().getStatusCode();
-        if (status < 200 || status > 300) {
+        if (status >= 200 && status < 300) {
           return true;
         } else {
           logger.error("Subscription cancelling failed.");
